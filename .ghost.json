@@ -1,0 +1,12 @@
+{
+  "development": {
+    "apiUrl": "https://arseight.herokuapp.com",
+    "contentApiKey": "bdbe6cd9dffcd654add7fc0d9e",
+    "version": "v2"
+  },
+  "production": {
+    "apiUrl": "https://arseight.herokuapp.com",
+    "contentApiKey": "bdbe6cd9dffcd654add7fc0d9e",
+    "version": "v2"
+  }
+}
