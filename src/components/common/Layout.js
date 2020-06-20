@@ -5,7 +5,6 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { Navigation } from '.'
-import config from '../../utils/siteConfig'
 
 // Styles
 import '../../styles/app.css'
@@ -28,34 +27,31 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
                 <body className={bodyClass} />
             </Helmet>
-
             <div className="viewport">
-
                 <div className="viewport-top">
-                    {/* The main header section on top of the screen */}
                     <header className="site-head">
                         <div className="container">
                             <div className="site-mast">
                                 <div className="site-mast-left">
                                     <Link to="/">
                                         {site.logo ?
-                                            <img className="site-logo" src={site.logo} alt={site.title} />
-                                            : <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
+                                            <div className="site-header-top">
+                                                <img className="site-logo" src={site.logo} alt={site.title} />
+                                                <div className="site-header-link">
+                                                    <h1 className="site-banner-title">Annderson Rey</h1>
+                                                    <p className="site-banner-desc">{site.description}</p>
+                                                </div>
+                                            </div> :
+                                            <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
                                         }
                                     </Link>
                                 </div>
                                 <div className="site-mast-right">
                                     { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                                    <a href='https://instagram.com/anndersonrey' className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/instagram.svg" alt="Instagram" /></a>
-                                    <a href='https://github.com/annderson8' className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/github.svg" alt="GitHub" /></a>
+                                    <a href="https://instagram.com/anndersonrey" className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/instagram.svg" alt="Instagram" /></a>
+                                    <a href="https://github.com/annderson8" className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/github.svg" alt="GitHub" /></a>
                                 </div>
                             </div>
-                            {/* { isHome ?
-                                <div className="site-banner">
-                                    <h1 className="site-banner-title">{site.title}</h1>
-                                    <p className="site-banner-desc">{site.description}</p>
-                                </div> :
-                                null} */}
                             <nav className="site-nav">
                                 <div className="site-nav-left">
                                     {/* The navigation items as setup in Ghost */}
@@ -80,14 +76,13 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2020 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                                Hecho por Annderson Rey desde Colombia 🇨🇴
                             </div>
                             <div className="site-foot-nav-right">
                                 <Navigation data={site.navigation} navClass="site-foot-nav-item" />
                             </div>
                         </div>
                     </footer>
-
                 </div>
             </div>
 
