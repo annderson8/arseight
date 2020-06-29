@@ -47,7 +47,7 @@ const Post = ({ data, location }) => {
                                     <img src={post.feature_image} alt={post.title} />
                                 </figure>
                                 <div className="post-date">
-                                   Actualización - {post.updated_at_pretty}
+                                    Actualización - {post.updated_at_pretty}
                                 </div>
                                 <div className="post-tags">
                                     {post.tags.map((tag, index) => (
@@ -62,7 +62,7 @@ const Post = ({ data, location }) => {
                                 </div>
                                 <div className="post-author-profile">
                                     <Link to={`/author/${post.primary_author.slug}`}>
-                                        <h2>{post.primary_author.name}</h2>
+                                        {post.primary_author.name}
                                     </Link>
                                     <p> {post.primary_author.bio}</p>
                                 </div>
@@ -106,6 +106,6 @@ export const postQuery = graphql`
     query($slug: String!) {
         ghostPost(slug: {eq: $slug }) {
         ...GhostPostFields
-      }
-      }
-  `
+        }
+    }
+`

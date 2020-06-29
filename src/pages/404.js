@@ -5,11 +5,10 @@ import { Layout } from '../components/common'
 const NotFoundPage = () => (
     <Layout>
         <div className="container">
-            <article className="content" style={{ textAlign: `center` }}>
-                <h1 className="content-title">Error 404</h1>
-                <section className="content-body">
-                    Page not found, <Link to="/">return home</Link> to start over
-                </section>
+            <article className="content-404">
+                <h1>404</h1>
+                <h2>¿Estás perdido?</h2>
+                <Link to="/">Regresa al inicio</Link>
             </article>
         </div>
     </Layout>

@@ -5,20 +5,19 @@ import { Tags } from '@tryghost/helpers-gatsby'
 
 const PostCard = ({ post }) => {
     const url = `/${post.slug}/`
-    console.log(post)
     return (
         <Link to={url} className="post-card">
             <header className="post-card-header">
                 {post.feature_image &&
-                  <div className="post-card-image" style={{
-                      backgroundImage: `url(${post.feature_image})`,
-                  }}
-                  />}
+                <div className="post-card-image" style={{
+                    backgroundImage: `url(${post.feature_image})`,
+                }}
+                />}
                 {post.tags &&
-                  <div className="post-card-tags">
-                      <div><Tags post={post} visibility="public" autolink={false} /></div>
-                      By {post.primary_author.name} on {post.published_at_pretty}
-                  </div>
+                <div className="post-card-tags">
+                    <div><Tags post={post} visibility="public" autolink={false} /></div>
+                    By {post.primary_author.name} on {post.published_at_pretty}
+                </div>
                 }
                 {post.featured && <span>Featured</span>}
                 <h2 className="post-card-title">{post.title}</h2>

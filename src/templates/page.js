@@ -14,7 +14,6 @@ import { MetaData } from '../components/common/meta'
 */
 const Page = ({ data, location }) => {
     const page = data.ghostPage
-
     return (
         <>
             <MetaData
